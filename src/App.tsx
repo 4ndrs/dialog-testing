@@ -4,20 +4,12 @@ const App = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const handleClick = () => {
-    if (!dialogRef.current) {
-      return;
-    }
-
-    dialogRef.current.showModal();
+    dialogRef.current?.showModal();
   };
 
   const handleBackdropClick = (event: React.MouseEvent) => {
-    if (!dialogRef.current) {
-      return;
-    }
-
     if (event.target === event.currentTarget) {
-      dialogRef.current.close();
+      dialogRef.current?.close();
     }
   };
 
